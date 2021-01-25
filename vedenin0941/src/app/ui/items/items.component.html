@@ -1,5 +1,75 @@
-<div class="container mt-5">
-  <table class="table table-dark table-hover">
+<div class="container-fluid d-flex justify-content-around mt-5">
+  <div class="col-2">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            Фильтрация
+          </button>
+        </h2>
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo"
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+          >
+            Сортировка
+          </button>
+        </h2>
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-dark table-hover w-75">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -13,15 +83,29 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of items" (click)="openItem(item.id)">
-        <th scope="col">#</th>
-        <td scope="col">{{ item.name }}</td>
-        <td scope="col">{{ item.article }}</td>
-        <td scope="col">{{ item.cost }}</td>
-        <td scope="col">{{ item.maker }}</td>
-        <td scope="col">{{ item.category }}</td>
-        <td scope="col">{{ item.weight }}</td>
-        <td scope="col">{{ item.amount }}</td>
+      <tr *ngFor="let item of items">
+        <th scope="col" (click)="openItem(item.id)">#</th>
+        <td scope="col" (click)="openItem(item.id)">{{ item.name }}</td>
+        <td scope="col" (click)="openItem(item.id)">{{ item.article }}</td>
+        <td scope="col" (click)="openItem(item.id)">{{ item.cost }}</td>
+        <td scope="col" (click)="openItem(item.id)">{{ item.maker }}</td>
+        <td scope="col" (click)="openItem(item.id)">{{ item.category }}</td>
+        <td scope="col" (click)="openItem(item.id)">{{ item.weight }}</td>
+        <td scope="col">
+          <div class="d-flex align-items-center">
+            <i
+              class="fa fa-minus me-2"
+              aria-hidden="true"
+              (click)="minusItemData(item)"
+            ></i>
+            {{ item.amount }}
+            <i
+              class="fa fa-plus ms-2"
+              aria-hidden="true"
+              (click)="plusItemData(item)"
+            ></i>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -95,13 +179,16 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Категория</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+            <select
+              class="form-select"
               formControlName="category"
-            />
+              aria-label="Default select example"
+            >
+              <option value="Мебель">Мебель</option>
+              <option value="Техника">Техника</option>
+              <option value="Книги">Книги</option>
+              <option value="Телефоны">Телефоны</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Вес</label>

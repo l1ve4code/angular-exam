@@ -1,5 +1,6 @@
 <div class="container">
   <div [formGroup]="itemForm" class="border border-dark rounded p-3 mt-3 mb-3">
+    <input type="hidden" formControlName="id" value="" />
     <div>
       <label for="exampleInputEmail1" class="form-label">Название</label>
       <input
@@ -42,13 +43,16 @@
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Категория</label>
-      <input
-        type="text"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
+      <select
+        class="form-select"
         formControlName="category"
-      />
+        aria-label="Default select example"
+      >
+        <option value="Мебель">Мебель</option>
+        <option value="Техника">Техника</option>
+        <option value="Книги">Книги</option>
+        <option value="Телефоны">Телефоны</option>
+      </select>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Вес</label>

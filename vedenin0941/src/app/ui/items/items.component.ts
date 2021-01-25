@@ -23,13 +23,13 @@ export class ItemsComponent implements OnInit {
     this.addToArray();
     this.itemsForm = new FormGroup({
       id: new FormControl(0),
-      name: new FormControl('', [Validators.required]),
-      article: new FormControl('', [Validators.required]),
-      cost: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.min(0)]),
+      article: new FormControl('', [Validators.required, Validators.min(0)]),
+      cost: new FormControl('', [Validators.required, Validators.min(0)]),
       maker: new FormControl(''),
-      category: new FormControl('', [Validators.required]),
-      weight: new FormControl('', [Validators.required]),
-      amount: new FormControl('', [Validators.required]),
+      category: new FormControl('', [Validators.required, Validators.min(0)]),
+      weight: new FormControl('', [Validators.required, Validators.min(0)]),
+      amount: new FormControl('', [Validators.required, Validators.min(0)]),
     });
   }
 
@@ -41,6 +41,20 @@ export class ItemsComponent implements OnInit {
     this.itemsForm.reset();
   }
 
+  async plusItemData(item: any){
+    item.amount += 1;
+    await this.rs.updateItem(item);
+    this.addToArray();
+  }
+
+  async minusItemData(item: any){
+    if(item.amount != 0){
+      item.amount -= 1;
+    }
+    await this.rs.updateItem(item);
+    this.addToArray();
+  }
+
   async onAddItem() {
     let id: any = 0;
     if(this.items.length > 0){
@@ -50,7 +64,6 @@ export class ItemsComponent implements OnInit {
       id = 1;
     }
     this.itemsForm.get("id")?.setValue(id);
-    this.items.push(this.itemsForm.value);
     await this.rs.addItem(this.itemsForm.value);
     this.addToArray();
     this.clearFormGroup();

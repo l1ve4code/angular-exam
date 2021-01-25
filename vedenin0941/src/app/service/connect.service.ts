@@ -19,4 +19,12 @@ export class ConnectService {
     return this.http.post(this.url, data).toPromise();
   }
 
+  updateItem(data: Item): Promise<any>{
+    return this.http.put(this.url + "/" + data.id, data).toPromise();
+  }
+
+  deleteItem(data: Item): Promise<any>{
+    return this.http.delete(this.url + "/" + data.id).toPromise();
+  }
+
 }
