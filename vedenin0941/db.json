@@ -2,13 +2,13 @@
   "items": [
     {
       "id": 1,
-      "name": "Помидор",
+      "name": "Томат",
       "article": "S09328SD",
-      "cost": 182,
+      "cost": "182",
       "maker": "ОАО 'Агроном'",
       "category": "Книги",
-      "weight": 293,
-      "amount": 16
+      "weight": "293",
+      "amount": "50"
     },
     {
       "id": 3,
@@ -48,7 +48,17 @@
       "maker": "DNS-SHOP",
       "category": "Техника",
       "weight": 29,
-      "amount": 32
+      "amount": 30
+    },
+    {
+      "id": 6,
+      "name": "MacBook",
+      "article": "SJ928377K",
+      "cost": 100000,
+      "maker": "'Android'",
+      "category": "Техника",
+      "weight": 100,
+      "amount": 2
     }
   ]
 }
