@@ -17,6 +17,11 @@ export class ItemsComponent implements OnInit {
 
   itemsForm: FormGroup = new FormGroup({});
 
+  category: string = "";
+  isset: boolean = false;
+  cost: number = 0;
+  amount: number = 0;
+
   constructor(private rs : ConnectService, private router: Router) { }
 
   ngOnInit(): void {

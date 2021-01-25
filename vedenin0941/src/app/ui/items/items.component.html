@@ -21,16 +21,31 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-            single-origin coffee nulla assumenda shoreditch et. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth
-            nesciunt you probably haven't heard of them accusamus labore
-            sustainable VHS.
+            <div>
+              <label for="exampleInputEmail1" class="form-label"
+                >Категория</label
+              >
+              <select class="form-select" [(ngModel)]="category">
+                <option value="">Все</option>
+                <option value="Мебель">Мебель</option>
+                <option value="Техника">Техника</option>
+                <option value="Книги">Книги</option>
+                <option value="Телефоны">Телефоны</option>
+              </select>
+            </div>
+            <div class="mt-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [(ngModel)]="isset"
+                  id="flexCheckDefault"
+                />
+                <label class="form-check-label" for="flexCheckDefault">
+                  По наличию
+                </label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -54,16 +69,30 @@
           data-bs-parent="#accordionFlushExample"
         >
           <div class="accordion-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-            single-origin coffee nulla assumenda shoreditch et. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth
-            nesciunt you probably haven't heard of them accusamus labore
-            sustainable VHS.
+            <div>
+              <label for="exampleInputEmail1" class="form-label">По цене</label>
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                [(ngModel)]="cost"
+              >
+                <option value="1">По возрастанию</option>
+                <option value="0">По убыванию</option>
+              </select>
+            </div>
+            <div class="mt-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >По количеству на складе</label
+              >
+              <select
+                class="form-select"
+                aria-label="Default select example"
+                [(ngModel)]="amount"
+              >
+                <option value="1">По возрастанию</option>
+                <option value="0">По убыванию</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +112,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of items">
+      <tr
+        *ngFor="
+          let item of items
+            | category: category
+            | available: isset
+            | cost: cost
+            | amount: amount
+        "
+      >
         <th scope="col" (click)="openItem(item.id)">#</th>
         <td scope="col" (click)="openItem(item.id)">{{ item.name }}</td>
         <td scope="col" (click)="openItem(item.id)">{{ item.article }}</td>

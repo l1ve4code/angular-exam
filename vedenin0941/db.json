@@ -8,27 +8,27 @@
       "maker": "ОАО 'Агроном'",
       "category": "Книги",
       "weight": 293,
-      "amount": 4
+      "amount": 16
     },
     {
       "id": 3,
       "name": "Вишня",
       "article": "S9348GS92",
       "cost": "229",
-      "maker": "ООО 'Путин'",
+      "maker": "ООО 'M.Video'",
       "category": "Техника",
-      "weight": 232,
-      "amount": 107
+      "weight": "232",
+      "amount": 91
     },
     {
       "id": 4,
       "name": "Яблоко",
       "article": "A02398B",
-      "cost": 100,
-      "maker": "ОАО 'Навальный'",
-      "category": "Техника",
+      "cost": "100",
+      "maker": "ОАО 'Apple'",
+      "category": "Телефоны",
       "weight": "23",
-      "amount": "20"
+      "amount": 92
     },
     {
       "id": 5,
@@ -38,16 +38,16 @@
       "maker": "ОАО 'DNS-SHOP'",
       "category": "Мебель",
       "weight": "10",
-      "amount": "30"
+      "amount": 21
     },
     {
-      "id": 6,
-      "name": "Компьютер",
-      "article": "SS02395K",
+      "id": 2,
+      "name": "Игровой компьютер",
+      "article": "SJ92388AU",
       "cost": 20000,
-      "maker": "ОАО 'Технопарк'",
+      "maker": "DNS-SHOP",
       "category": "Техника",
-      "weight": 1000,
+      "weight": 29,
       "amount": 32
     }
   ]
