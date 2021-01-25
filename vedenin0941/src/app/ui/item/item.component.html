@@ -1,0 +1,94 @@
+<div class="container">
+  <div [formGroup]="itemForm" class="border border-dark rounded p-3 mt-3 mb-3">
+    <div>
+      <label for="exampleInputEmail1" class="form-label">Название</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Артикул</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="article"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Цена</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="cost"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Производитель</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="maker"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Категория</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="category"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Вес</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="weight"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
+        >Количество на складе</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="amount"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="toItemsPage()">
+      Назад
+    </button>
+    <button
+      type="submit"
+      class="btn btn-danger ms-3"
+      (click)="deleteItemData()"
+    >
+      Удалить
+    </button>
+    <button
+      type="submit"
+      class="btn btn-warning ms-3"
+      [disabled]="!itemForm.valid"
+      (click)="editItemData()"
+    >
+      Изменить
+    </button>
+  </div>
+</div>

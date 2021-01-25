@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Помидор",
+      "article": "Z09S823",
+      "cost": 2000,
+      "maker": "ОАО 'Агроном",
+      "category": "Мебель",
+      "weight": 10,
+      "amount": 192
+    },
+    {
+      "id": 2,
+      "name": "Огурец",
+      "article": "A09S843",
+      "cost": 1000,
+      "maker": "ОАО 'Агроном",
+      "category": "Техника",
+      "weight": 4,
+      "amount": 89
+    },
+    {
+      "id": 3,
+      "name": "Банан",
+      "article": "A09S843",
+      "cost": 1000,
+      "maker": "ОАО 'Агроном",
+      "category": "Книги",
+      "weight": 4,
+      "amount": 89
+    },
+    {
+      "id": 4,
+      "name": "Персик",
+      "article": "A09S843",
+      "cost": 1000,
+      "maker": "ОАО 'Агроном",
+      "category": "Телефоны",
+      "weight": 4,
+      "amount": 89
+    },
+    {
+      "id": 5,
+      "name": "Баклажан",
+      "article": "O0492SJ1",
+      "cost": 583,
+      "maker": "ОАО 'Политех'",
+      "category": "Техника",
+      "weight": 29,
+      "amount": 1
+    },
+    {
+      "id": 6,
+      "name": "Тыква",
+      "article": "S0392SJ",
+      "cost": 192,
+      "maker": "ООО 'МТС'",
+      "category": "Книги",
+      "weight": 34,
+      "amount": 83
+    }
+  ]
+}

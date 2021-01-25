@@ -1,0 +1,143 @@
+<div class="container mt-5">
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Артикул</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Производитель</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Вес</th>
+        <th scope="col">Кол-во на складе</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items" (click)="openItem(item.id)">
+        <th scope="col">#</th>
+        <td scope="col">{{ item.name }}</td>
+        <td scope="col">{{ item.article }}</td>
+        <td scope="col">{{ item.cost }}</td>
+        <td scope="col">{{ item.maker }}</td>
+        <td scope="col">{{ item.category }}</td>
+        <td scope="col">{{ item.weight }}</td>
+        <td scope="col">{{ item.amount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-menu></app-menu>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавление товара</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="clearFormGroup()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div [formGroup]="itemsForm" class="p-3 mt-1 mb-2">
+          <input type="hidden" formControlName="id" value="0" />
+          <div>
+            <label for="exampleInputEmail1" class="form-label">Название</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Артикул</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="article"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Цена</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="cost"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Производитель</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="maker"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Категория</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="category"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Вес</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="weight"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Количество на складе</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              formControlName="amount"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            [disabled]="!itemsForm.valid"
+            (click)="onAddItem()"
+          >
+            Добавить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
